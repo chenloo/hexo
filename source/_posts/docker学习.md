@@ -1,49 +1,55 @@
-title: docker学习
+---
+title: docker 学习
 author: 陈龙
 tags:
   - docker
 categories:
   - 学习
 keywords:
-  - docker 
+  - docker
 date: 2023-04-27 14:47:00
 ---
+
 ## 安装环境说明
 
-&emsp;&emsp; Docker官方建议在Ubuntu中安装，因为Docker是基于Ubuntu发布的，而且一般Docker出现的问题Ubuntu是最先更新或者打补丁的。在很多版本的CentOS中是不支持更新最新的一些补丁包的。
-&emsp;&emsp; 由于我们学习的环境都使用的是CentOS，因此这里我们将Docker安装到CentOS上。注意：这里建议安装在CentOS7.x以上的版本，在CentOS6.x的版本中，安装前需要安装其他很多的环境而且Docker很多补丁不支持更新。
+&emsp;&emsp; Docker 官方建议在 Ubuntu 中安装，因为 Docker 是基于 Ubuntu 发布的，而且一般 Docker 出现的问题 Ubuntu 是最先更新或者打补丁的。在很多版本的 CentOS 中是不支持更新最新的一些补丁包的。
+&emsp;&emsp; 由于我们学习的环境都使用的是 CentOS，因此这里我们将 Docker 安装到 CentOS 上。注意：这里建议安装在 CentOS7.x 以上的版本，在 CentOS6.x 的版本中，安装前需要安装其他很多的环境而且 Docker 很多补丁不支持更新。
 
-## 镜像加速  科学上网
+## 镜像加速 科学上网
 
 网易的镜像地址：http://hub-mirror.c.163.com
 
 新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon，在该配置文件中加入（没有该文件的话，请先建一个）：
+
 ```json
 {
   "registry-mirrors": ["http://hub-mirror.c.163.com"]
 }
 ```
 
-## yum安装Docker
+## yum 安装 Docker
 
 &emsp;&emsp; 从 2017 年 3 月开始 docker 在原来的基础上分为两个分支版本: Docker CE 和 Docker EE。
 Docker CE 即社区免费版，Docker EE 即企业版，强调安全，但需付费使用。
 
-&emsp;&emsp; Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。
+&emsp;&emsp; Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的 CentOS 版本是否支持 Docker 。
 
-### 3.1 通过uname -r命令查看你当前的内核版本
-``` shell
+### 3.1 通过 uname -r 命令查看你当前的内核版本
+
+```shell
 [root@localhost home]# uname -r
 3.10.0-957.1.3.el7.x86_64
 ```
 
-### 3.2 更新yum包
-``` shell
+### 3.2 更新 yum 包
+
+```shell
 [root@localhost home]# yum -y update
 ```
 
 ### 3.3 移除已安装的旧版本
-``` shell
+
+```shell
 [root@localhost home]# yum remove docker \
                    docker-client \
                    docker-client-latest \
@@ -57,21 +63,25 @@ Docker CE 即社区免费版，Docker EE 即企业版，强调安全，但需付
 ```
 
 ### 3.4 安装必要的系统工具
+
 ```shell
 [root@localhost home]# yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 
 ### 3.5 添加软件源信息
+
 ```shell
 [root@localhost home]# yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-### 3.6 更新yum缓存
+### 3.6 更新 yum 缓存
+
 ```shell
 [root@localhost home]# yum makecache fast
 ```
 
-### 3.7 查看仓库中所有的docker版本，并选择特定版本安装
+### 3.7 查看仓库中所有的 docker 版本，并选择特定版本安装
+
 ```shell
 [root@localhost ~]# yum list docker-ce --showduplicates | sort -r
  * updates: mirrors.aliyun.com
@@ -84,26 +94,32 @@ docker-ce.x86_64                3:18.09.0-3.el7                @docker-ce-stable
  * base: mirrors.aliyun.com
 ```
 
-### 3.8 安装docker-ce
- 由于repo中默认只开启stable仓库，故这里安装的是最新稳定版18.09.0
- ```shell
+### 3.8 安装 docker-ce
+
+由于 repo 中默认只开启 stable 仓库，故这里安装的是最新稳定版 18.09.0
+
+```shell
 [root@localhost home]# yum -y install docker-ce
 ```
 
 安装指定版本
+
 ```shell
 [root@localhost home]# yum install <FQPN>  # 例如：sudo yum install docker-ce-18.09.0.ce
 ```
 
-### 3.9 启动Docker后台服务
+### 3.9 启动 Docker 后台服务
+
 ```shell
 [root@localhost home]# systemctl start docker
 或者
 [root@localhost home]# service docker start
 ```
 
-### 3.10 测试运行hello-world
-由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。
+### 3.10 测试运行 hello-world
+
+由于本地没有 hello-world 这个镜像，所以会下载一个 hello-world 的镜像，并在容器内运行。
+
 ```shell
 [root@localhost home]# docker run hello-world
 
@@ -130,7 +146,8 @@ For more examples and ideas, visit:
 
 ```
 
-### 3.11 查看Docker版本
+### 3.11 查看 Docker 版本
+
 ```shell
 [root@localhost home]# docker -v
 Docker version 18.09.0, build 4d60db4
@@ -155,30 +172,35 @@ Server: Docker Engine - Community
   Experimental:     false
 ```
 
+## 4 脚本安装 Docker
 
-## 4 脚本安装Docker
+### 4.1 更新 yum 包
 
-### 4.1 更新yum包
 ```shell
 [root@localhost home]# yum update
 ```
 
-### 4.2 下载并执行Docker安装脚本
+### 4.2 下载并执行 Docker 安装脚本
+
 执行这个脚本会添加 docker.repo 源并安装 Docker。
+
 ```shell
 [root@localhost home]# curl -fsSL https://get.docker.com -o get-docker.sh
 [root@localhost home]# sh get-docker.sh
 ```
 
-### 4.3 启动Docker进程
+### 4.3 启动 Docker 进程
+
 ```shell
 [root@localhost home]# systemctl start docker
 或者
 [root@localhost home]# service docker start
 ```
 
-### 4.4 测试运行hello-world
-由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。
+### 4.4 测试运行 hello-world
+
+由于本地没有 hello-world 这个镜像，所以会下载一个 hello-world 的镜像，并在容器内运行。
+
 ```shell
 [root@localhost home]# docker run hello-world
 
@@ -204,17 +226,19 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-### 4.5 查看Docker版本
+### 4.5 查看 Docker 版本
+
 ```shell
 [root@localhost home]# docker -v
 Docker version 18.09.0, build 4d60db4
 ```
 
-## 5 启动与停止Docker服务
+## 5 启动与停止 Docker 服务
 
-systemctl命令是系统服务管理器指令，它是 service 和 chkconfig 两个命令组合。
+systemctl 命令是系统服务管理器指令，它是 service 和 chkconfig 两个命令组合。
 
 ### 5.1 启动
+
 ```shell
 [root@localhost home]# systemctl start docker
 或者
@@ -222,6 +246,7 @@ systemctl命令是系统服务管理器指令，它是 service 和 chkconfig 两
 ```
 
 ### 5.2 停止
+
 ```shell
 [root@localhost home]# systemctl stop docker
 或者
@@ -229,13 +254,15 @@ systemctl命令是系统服务管理器指令，它是 service 和 chkconfig 两
 ```
 
 ### 5.3 重启
+
 ```shell
 [root@localhost home]# systemctl restart docker
 或者
 [root@localhost home]# service restart stop
 ```
 
-### 5.4 查看Docker状态
+### 5.4 查看 Docker 状态
+
 ```shell
 [root@localhost home]# systemctl status docker
 ● docker.service - Docker Application Container Engine
@@ -262,17 +289,21 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
 ### 5.5 设置开机启动
+
 ```shell
 [root@localhost home]# systemctl enable docker
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
 ```
 
 ### 5.6 关闭开机启动
+
 ```shell
 [root@localhost home]# systemctl disable docker
 Removed symlink /etc/systemd/system/multi-user.target.wants/docker.service.
 ```
-### 5.7 查看Docker概要信息
+
+### 5.7 查看 Docker 概要信息
+
 ```shell
 [root@localhost home]# docker info
 Containers: 5
@@ -326,7 +357,8 @@ WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 ```
 
-## 6 删除Docker
+## 6 删除 Docker
+
 ```shell
 [root@localhost home]# yum remove docker-ce
 [root@localhost home]# rm -rf /var/lib/docker
