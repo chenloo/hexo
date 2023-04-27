@@ -54,14 +54,14 @@ disable_top_img: false
 index_img: http://tutujia.top:10001/swxf.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:
+default_top_img: http://tutujia.top:10001/swxf.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: http://tutujia.top:10001/swxf.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-top_img: "linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"
+top_img: http://tutujia.top:10001/swxf.jpg
 
 # The banner image of tag page
 # format:
@@ -157,7 +157,7 @@ toc:
 post_copyright:
   enable: true
   decode: false
-  author_href:
+  author_href: https://blog.tutujia.top
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
