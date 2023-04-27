@@ -5,11 +5,11 @@
 # Site
 title: 闲云野鹤
 subtitle: ""
-description: ""
+description: "宠辱不惊，闲看庭前花开花落；去留无意，漫随天外云卷云舒"
 keywords:
 author: 加菲猫
-language: cn
-timezone: ""
+language: zh-CN
+timezone: "Asia/Shanghai"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
