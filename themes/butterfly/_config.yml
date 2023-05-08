@@ -147,12 +147,12 @@ copy:
 
 # toc (目錄)
 toc:
-  post: true
-  page: false
-  number: true
-  expand: false
-  style_simple: false # for post
-  scroll_percent: true
+  post: true # 文章頁是否顯示 TOC
+  page: true # 普通頁面是否顯示 TOC
+  number: true # 是否顯示章節數
+  expand: false # 是否展開 TOC
+  style_simple: false # for post 簡潔模式（側邊欄只顯示 TOC, 只對文章頁有效 ）
+  scroll_percent: true # 是否顯示滾動進度百分比
 
 post_copyright:
   enable: true
@@ -186,12 +186,12 @@ related_post:
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
-# post_pagination (分頁)
+#post_pagination #(分頁)
 # value: 1 || 2 || false
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -771,7 +771,7 @@ preloader:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: false
+  enable: true
   post_wordcount: true
   min2read: true
   total_wordcount: true
