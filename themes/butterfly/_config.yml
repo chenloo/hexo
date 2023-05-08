@@ -45,7 +45,7 @@ favicon: /img/favicon.png
 # Avatar (頭像)
 avatar:
   img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
-  effect: false
+  effect: true
 
 # Disable all banner image
 disable_top_img: false
@@ -61,7 +61,7 @@ archive_img: http://tutujia.top:10001/swxf.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-top_img: http://tutujia.top:10001/swxf.jpg
+top_img: "linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"
 
 # The banner image of tag page
 # format:
@@ -669,12 +669,12 @@ canvas_ribbon:
   size: 150
   alpha: 0.6
   zIndex: -1
-  click_to_change: false
-  mobile: false
+  click_to_change: true
+  mobile: true
 
 # Fluttering Ribbon (動態彩帶)
 canvas_fluttering_ribbon:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
@@ -899,6 +899,7 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
+    - <script src="/js/sakura.js"></script>
     # - <script src="xxxx"></script>
 
 # CDN
