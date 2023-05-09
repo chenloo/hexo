@@ -14,12 +14,27 @@ timezone: "Asia/Shanghai"
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://blog.tutujia.top
+root: /
 # permalink: :year/:month/:day/:title/
-permalink: blog/:abbrlink.html # 也可以直接写 :abbrlink/
+permalink: p/:abbrlink.html # 也可以直接写 :abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# abbrlink 生成永久链接
+abbrlink:
+  alg: crc32 #support crc16(default) and crc32
+  rep: dec #support dec(default) and hex
+  drafts: false #(true)Process draft,(false)Do not process draft. false(default)
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+    enable: true #true(default)
+    depth: #3(default)
+    over_write: false
+  auto_title: false #enable auto title, it can auto fill the title by path
+  auto_date: false #enable auto date, it can auto fill the date by time today
+  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
 
 # Directory
 source_dir: source
@@ -41,7 +56,7 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -104,21 +119,6 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ""
-
-# abbrlink 生成永久链接
-abbrlink:
-  alg: crc32 #support crc16(default) and crc32
-  rep: dec #support dec(default) and hex
-  drafts: false #(true)Process draft,(false)Do not process draft. false(default)
-  # Generate categories from directory-tree
-  # depth: the max_depth of directory-tree you want to generate, should > 0
-  auto_category:
-    enable: true #true(default)
-    depth: #3(default)
-    over_write: false
-  auto_title: false #enable auto title, it can auto fill the title by path
-  auto_date: false #enable auto date, it can auto fill the date by time today
-  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
 
 # hexo-helper-live2d  添加看板娘
 live2d:
