@@ -1,6 +1,9 @@
 ---
 title: docker 学习
 author: 陈龙
+categories:
+  - 技术
+  - docker
 tags:
   - docker
 categories:

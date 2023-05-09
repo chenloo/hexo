@@ -1,12 +1,16 @@
 ---
 title: Centos7开放及查看端口
 author: 陈龙
+categories:
+  - 技术
+  - linux
 tags:
   - linux
 keywords:
   - linux
   - centos
-date: 2023-05-09
+abbrlink: 1405786557
+date: 2023-05-09 00:00:00
 ---
 1、开放端口
 
