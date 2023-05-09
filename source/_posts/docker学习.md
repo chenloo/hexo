@@ -364,3 +364,4 @@ WARNING: bridge-nf-call-ip6tables is disabled
 [root@localhost home]# yum remove docker-ce
 [root@localhost home]# rm -rf /var/lib/docker
 ```
+
