@@ -1,4 +1,4 @@
-#body-wrap {
+#web_bg {
   background: -webkit-linear-gradient(
     0deg,
     rgba(247, 149, 51, 0.1) 0,
@@ -67,5 +67,5 @@
 .layout_post > #post,
 .read-mode .layout_post > #post {
   /* 以下代表白色透明度为0.3 */
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
