@@ -1,13 +1,11 @@
 ---
 title: docker 学习
 author: 陈龙
-categories:
-  - 技术
-  - docker
 tags:
   - docker
 categories:
-  - 学习
+  - 技术
+  - docker
 keywords:
   - docker
 abbrlink: 2817603773
