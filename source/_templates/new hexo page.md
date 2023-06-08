@@ -7,5 +7,5 @@ categories:
   - 
 keywords:
   - 
-date: {{date}}
+date: {{date}} {{time}}
 ---
