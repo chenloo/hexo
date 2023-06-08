@@ -8,7 +8,6 @@ categories:
   - git
 keywords:
   - git
-  - 规范
 date: 2023-06-08 08:28
 ---
 ## 分支管理
@@ -56,9 +55,7 @@ date: 2023-06-08 08:28
 
 ## git操作规范
 
-![0.png](file:///Users/apple/.config/joplin-desktop/resources/0cc9b1437a754eee95d41ec3e9401cef.png?t=1672707217732)
-
-0.png
+![](5e42172275560c995fdfc1c309e9999f_MD5.png)
 
 ## 重点注意事项
 
@@ -71,39 +68,22 @@ date: 2023-06-08 08:28
 ### 在合并分支流程，如：分支1的代码需同步到分支2上
 
 -   先切换到需要同步代码的分支2
-    
-    ![1.png](file:///Users/apple/.config/joplin-desktop/resources/57562b9546ce4c28b3f374a7c14bc9a1.png?t=1672707416877)
-    
-    1.png
-    
-    ![2.png](file:///Users/apple/.config/joplin-desktop/resources/d325b61ff0e74663b8dee20096194dcd.png?t=1672707423589)
-    
-    2.png
-    
--   点击需要同步过来的分支1，点击merge into current
-    
-    ![3.png](file:///Users/apple/.config/joplin-desktop/resources/9439f7b0c7bb47419e1c098d983db9c5.png?t=1672707445816)
-    
-    3.png
-    
 
+![](f22cec5665f5d590e961d1c48e2ecc1b_MD5.png)
+
+-   点击需要同步过来的分支1，点击merge into current
+
+![](1663439da58a3c906439f7ab897513f6_MD5.png)
 ### 如果pull代码过程中，merge出错的处理方式
 
 -   通过 git reflog [分支名] 的命令查看响应的日志
-    
-    ![4.png](file:///Users/apple/.config/joplin-desktop/resources/454a4a26b0e9436b829d1c32a205db6d.png?t=1672707489984)
-    
-    4.png
-    
--   获得上一次 commit_id 如上：afe54ca，然后通过 git reset --hard commit_id，例如：git reset --hard afe54ca
-    
-    ![5.png](file:///Users/apple/.config/joplin-desktop/resources/a1b729a0348447a696feb48fb0a6a4c8.png?t=1672707510642)
-    
-    5.png
-    
--   再通过pull 命令拉取最新的代码，再重新合并即可
-    
 
+![](18144117468b86a77131d9ab385bc8d1_MD5.png)
+-   获得上一次 commit_id 如上：afe54ca，然后通过 git reset --hard commit_id，例如：git reset --hard afe54ca
+
+![](376efdee81a175037dcaa2928cd18323_MD5.png)
+
+-   再通过pull 命令拉取最新的代码，再重新合并即可
 ### 重点注意
 
 -   每次 pull 前，切记要提交本地代码到本地库中，否则可能回出现合并代码出错，导致代码丢失的情况
