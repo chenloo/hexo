@@ -6,7 +6,6 @@ tags:
   - vmware
 categories:
   - linux
-  - 技术
   - vsphere
 keywords:
   - 扩容
@@ -44,10 +43,13 @@ fdisk /dev/sda
 
 w 是写入这个分区表。
 修改磁盘信息  
-fdisk -l 发现sda3 的Id 是83 我们要将它改成8e跟sda2是一样的 将system 类型改成Linux LVM  
+``fdisk -l`` 发现sda3 的Id 是83 我们要将它改成8e跟sda2是一样的 将system 类型改成Linux LVM  
 ![在这里插入图片描述](5dcb624516989f9d86969256f638b8e5_MD5.png)
 
-执行命令：fdisk /dev/sda  
+执行命令：
+``` shell
+fdisk /dev/sda  
+```
 ![在这里插入图片描述](4225ff6944406c61086aa9522c0e0c4b_MD5.png)
 
 ```shell
