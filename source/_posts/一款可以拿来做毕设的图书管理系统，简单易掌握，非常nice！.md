@@ -7,6 +7,7 @@ tags:
   - 图书馆系统
   - 毕设
 categories:
+  - 技术
   - Java
   - 系统
 keywords:

@@ -5,6 +5,7 @@ tags:
   - linux
   - vmware
 categories:
+  - 技术
   - linux
   - vsphere
 keywords:

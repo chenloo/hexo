@@ -5,6 +5,7 @@ tags:
   - git
   - 学习
 categories:
+  - 技术
   - git
 keywords:
   - git
